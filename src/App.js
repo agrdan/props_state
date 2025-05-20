@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+
+    state = {
+        buttonText: "Why algebra",
+        text: "Učilište Algebra"
+    }
+
+    toggleView = () => {
+        this.setState(prev => {
+            if (prev.buttonText === "Why algebra") {
+                return { buttonText: "We are", text: "Be excellent in things you like" }
+            } else {
+                return { buttonText: "Why algebra", text: "Učilište Algebra" }
+            }
+        })
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <header className="App-header">
+                    <Header toggleView={this.toggleView} text={this.state.text} buttonText={this.state.buttonText}/>
+                    <Main/>
+                    <Footer date={new Date().toLocaleDateString()}/>
+                </header>
+            </div>
+        );
+    }
 }
 
 export default App;
