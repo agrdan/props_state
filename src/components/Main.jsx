@@ -26,6 +26,9 @@ export default class Main extends React.Component {
             return <Table user={this.state.attendee} />
         } else if (this.state.showFormat === "list") {
             return <List user={this.state.attendee}/>
+        } else {
+            // it's impossible since we have select - but to be sure!
+            return <p>Error loading content, wrong type selected: {this.state.showFormat}</p>
         }
     }
 
