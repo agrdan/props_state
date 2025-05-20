@@ -21,11 +21,19 @@ class App extends React.Component{
         })
     }
 
+    showContent = () => {
+        return (
+            <h1>{this.state.text}</h1>
+        )
+    }
+
     render() {
         return (
             <div className="App">
                 <header className="App-header">
-                    <Header toggleView={this.toggleView} text={this.state.text} buttonText={this.state.buttonText}/>
+                    <Header toggleView={this.toggleView} text={this.state.text} buttonText={this.state.buttonText}>
+                        {this.showContent()}
+                    </Header>
                     <Main/>
                     <Footer date={new Date().toLocaleDateString()}/>
                 </header>

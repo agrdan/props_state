@@ -5,17 +5,17 @@ export default class Table extends React.Component {
         return (
             <table border="1">
                 <thead>
-                <tr>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Date of birth
-                    </th>
-                    <th>
-                        Address
-                    </th>
-                </tr>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Date of birth
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
